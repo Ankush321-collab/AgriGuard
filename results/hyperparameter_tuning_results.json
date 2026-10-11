@@ -1,0 +1,45 @@
+{
+  "KNN": {
+    "best_params": {
+      "weights": "distance",
+      "n_neighbors": 3,
+      "metric": "euclidean"
+    },
+    "best_cv_f1_macro": 0.59812802581878,
+    "tune_time_seconds": 52.84349729999667,
+    "fit_time_seconds": 0.011718800000380725
+  },
+  "SVM": {
+    "best_params": {
+      "gamma": "auto",
+      "C": 1.0
+    },
+    "best_cv_f1_macro": 0.6275926919323895,
+    "tune_time_seconds": 151.6676298000093,
+    "fit_time_seconds": 283.0705452000111
+  },
+  "LightGBM": {
+    "best_params": {
+      "subsample": 0.8,
+      "num_leaves": 31,
+      "n_estimators": 350,
+      "max_depth": 10,
+      "learning_rate": 0.1
+    },
+    "best_cv_f1_macro": 0.8272525544994805,
+    "tune_time_seconds": 627.0784089000081,
+    "fit_time_seconds": 95.73520009999629
+  },
+  "Random_Forest": {
+    "best_params": {
+      "n_estimators": 250,
+      "min_samples_split": 5,
+      "min_samples_leaf": 1,
+      "max_features": "sqrt",
+      "max_depth": null
+    },
+    "best_cv_f1_macro": 0.7884873176274274,
+    "tune_time_seconds": 37.99427500000456,
+    "fit_time_seconds": 6.545232699994813
+  }
+}

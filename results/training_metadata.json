@@ -1,0 +1,46 @@
+{
+  "feature_count": 848,
+  "feature_pipeline_version": "appleleaf9-full-multimodal-v2",
+  "segmentation": "exg-hsv-morphology-contour",
+  "feature_families": [
+    "color_524",
+    "texture_haralick_lbp_23",
+    "shape_hu_contour_13",
+    "gradient_hog_288"
+  ],
+  "class_names": [
+    "Alternaria leaf spot",
+    "Brown spot",
+    "Frogeye leaf spot",
+    "Grey spot",
+    "Healthy",
+    "Mosaic",
+    "Powdery mildew",
+    "Rust",
+    "Scab"
+  ],
+  "random_state": 42,
+  "validation_size": 0.1,
+  "test_size": 0.2,
+  "train_count": 10207,
+  "validation_count": 1458,
+  "test_count": 2917,
+  "best_model_by_val_macro_f1": "LightGBM",
+  "best_val_macro_f1": 0.8510976991240581,
+  "best_test_macro_f1": 0.8672088606089389,
+  "best_test_accuracy": 0.8642440863901268,
+  "models_evaluated": [
+    "KNN",
+    "SVM",
+    "LightGBM",
+    "Random_Forest",
+    "Logistic_Regression",
+    "Voting_Ensemble",
+    "Stacking_Ensemble"
+  ],
+  "hyperparameter_tuning": "RandomizedSearchCV with 3-fold StratifiedKFold",
+  "ensembles_implemented": [
+    "Voting_Ensemble",
+    "Stacking_Ensemble"
+  ]
+}

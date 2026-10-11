@@ -1,0 +1,52 @@
+{
+  "best_model_name": "LightGBM",
+  "selection_metric": "Validation-Macro-F1",
+  "validation_macro_f1": 0.8510976991240581,
+  "test_macro_f1": 0.8672088606089389,
+  "test_accuracy": 0.8642440863901268,
+  "is_ensemble": false,
+  "all_ranked_models": [
+    {
+      "Model": "LightGBM",
+      "Validation-Macro-F1": 0.8510976991240581,
+      "Macro-F1": 0.8672088606089389,
+      "Accuracy": 0.8642440863901268
+    },
+    {
+      "Model": "Voting_Ensemble",
+      "Validation-Macro-F1": 0.841368242430864,
+      "Macro-F1": 0.846216184413085,
+      "Accuracy": 0.8409324648611587
+    },
+    {
+      "Model": "Stacking_Ensemble",
+      "Validation-Macro-F1": 0.8349586987398838,
+      "Macro-F1": 0.837323512689857,
+      "Accuracy": 0.8385327391155296
+    },
+    {
+      "Model": "Random_Forest",
+      "Validation-Macro-F1": 0.8050662619636688,
+      "Macro-F1": 0.8113306075252421,
+      "Accuracy": 0.7888241343846417
+    },
+    {
+      "Model": "Logistic_Regression",
+      "Validation-Macro-F1": 0.7102663485147145,
+      "Macro-F1": 0.7061579244505398,
+      "Accuracy": 0.7041480973603017
+    },
+    {
+      "Model": "SVM",
+      "Validation-Macro-F1": 0.7095472271976413,
+      "Macro-F1": 0.7262412140024037,
+      "Accuracy": 0.6996914638327049
+    },
+    {
+      "Model": "KNN",
+      "Validation-Macro-F1": 0.6306185349103546,
+      "Macro-F1": 0.6345194931010083,
+      "Accuracy": 0.631470689064107
+    }
+  ]
+}

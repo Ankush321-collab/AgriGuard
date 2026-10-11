@@ -1,0 +1,67 @@
+# ==============================================================================
+# AgriGuard-ML .gitignore
+# Excludes heavy datasets, binary model weights, embeddings, and virtual environments
+# ==============================================================================
+
+# --- Python Virtual Environment ---
+.venv/
+venv/
+env/
+ENV/
+.env
+
+# --- Byte-compiled / Cache files ---
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyd
+.pytest_cache/
+.coverage
+htmlcov/
+.cache/
+
+# --- Large Datasets & Raw Images (Hundreds of MBs / GBs) ---
+Data/
+data/
+outputs/
+*.jpg
+*.jpeg
+*.png
+*.bmp
+# Keep report/results visualizations and figures
+!results/*.png
+!Architecture.png
+!Sytem_design.png
+
+# --- Extracted HDF5 Feature Embeddings ---
+embeddings/
+*.h5
+*.hdf5
+
+# --- Trained Machine Learning Models & Heavy Binaries (>50MB-150MB each) ---
+# GitHub rejects files > 100MB; all binary models should be generated via scripts
+models/*.joblib
+models/*.pkl
+models/*.pickle
+models/*.pt
+models/*.onnx
+# Keep directory structure with gitkeep
+!.gitkeep
+
+# --- IDEs, Tooling & Extension Artifacts ---
+.vscode/
+.idea/
+.qodo/
+*.sublime-project
+*.sublime-workspace
+
+# --- Operating System Artifacts ---
+.DS_Store
+Thumbs.db
+ehthumbs.db
+desktop.ini
+
+# --- Logs & Scratch Dumps ---
+*.log
+scratch/
+tmp/
