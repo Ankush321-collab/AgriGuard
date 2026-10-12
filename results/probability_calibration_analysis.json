@@ -1,0 +1,742 @@
+{
+  "KNN": {
+    "val": {
+      "multi_class_brier_score": 0.5448,
+      "expected_calibration_error": 0.1588,
+      "reliability_bins": [
+        {
+          "bin_range": "0.3-0.4",
+          "count": 108,
+          "accuracy": 0.3241,
+          "confidence": 0.3411
+        },
+        {
+          "bin_range": "0.4-0.5",
+          "count": 4,
+          "accuracy": 0.75,
+          "confidence": 0.4367
+        },
+        {
+          "bin_range": "0.5-0.6",
+          "count": 3,
+          "accuracy": 0.6667,
+          "confidence": 0.5485
+        },
+        {
+          "bin_range": "0.6-0.7",
+          "count": 691,
+          "accuracy": 0.5355,
+          "confidence": 0.6666
+        },
+        {
+          "bin_range": "0.7-0.8",
+          "count": 17,
+          "accuracy": 0.9412,
+          "confidence": 0.7385
+        },
+        {
+          "bin_range": "0.8-0.9",
+          "count": 32,
+          "accuracy": 0.9375,
+          "confidence": 0.8485
+        },
+        {
+          "bin_range": "0.9-1.0",
+          "count": 600,
+          "accuracy": 0.78,
+          "confidence": 0.9977
+        }
+      ]
+    },
+    "test": {
+      "multi_class_brier_score": 0.5354,
+      "expected_calibration_error": 0.1694,
+      "reliability_bins": [
+        {
+          "bin_range": "0.3-0.4",
+          "count": 216,
+          "accuracy": 0.3981,
+          "confidence": 0.3425
+        },
+        {
+          "bin_range": "0.4-0.5",
+          "count": 2,
+          "accuracy": 0.5,
+          "confidence": 0.4445
+        },
+        {
+          "bin_range": "0.5-0.6",
+          "count": 9,
+          "accuracy": 0.3333,
+          "confidence": 0.5503
+        },
+        {
+          "bin_range": "0.6-0.7",
+          "count": 1295,
+          "accuracy": 0.5097,
+          "confidence": 0.667
+        },
+        {
+          "bin_range": "0.7-0.8",
+          "count": 20,
+          "accuracy": 0.9,
+          "confidence": 0.7343
+        },
+        {
+          "bin_range": "0.8-0.9",
+          "count": 76,
+          "accuracy": 0.9605,
+          "confidence": 0.8403
+        },
+        {
+          "bin_range": "0.9-1.0",
+          "count": 1292,
+          "accuracy": 0.7949,
+          "confidence": 0.9982
+        }
+      ]
+    }
+  },
+  "SVM": {
+    "val": {
+      "multi_class_brier_score": 0.3824,
+      "expected_calibration_error": 0.0222,
+      "reliability_bins": [
+        {
+          "bin_range": "0.2-0.3",
+          "count": 3,
+          "accuracy": 0.6667,
+          "confidence": 0.2517
+        },
+        {
+          "bin_range": "0.3-0.4",
+          "count": 37,
+          "accuracy": 0.3243,
+          "confidence": 0.3606
+        },
+        {
+          "bin_range": "0.4-0.5",
+          "count": 157,
+          "accuracy": 0.4968,
+          "confidence": 0.456
+        },
+        {
+          "bin_range": "0.5-0.6",
+          "count": 259,
+          "accuracy": 0.5598,
+          "confidence": 0.5523
+        },
+        {
+          "bin_range": "0.6-0.7",
+          "count": 219,
+          "accuracy": 0.6667,
+          "confidence": 0.6483
+        },
+        {
+          "bin_range": "0.7-0.8",
+          "count": 282,
+          "accuracy": 0.7518,
+          "confidence": 0.7492
+        },
+        {
+          "bin_range": "0.8-0.9",
+          "count": 273,
+          "accuracy": 0.8828,
+          "confidence": 0.8514
+        },
+        {
+          "bin_range": "0.9-1.0",
+          "count": 225,
+          "accuracy": 0.9778,
+          "confidence": 0.9423
+        }
+      ]
+    },
+    "test": {
+      "multi_class_brier_score": 0.4006,
+      "expected_calibration_error": 0.0107,
+      "reliability_bins": [
+        {
+          "bin_range": "0.2-0.3",
+          "count": 14,
+          "accuracy": 0.2143,
+          "confidence": 0.277
+        },
+        {
+          "bin_range": "0.3-0.4",
+          "count": 101,
+          "accuracy": 0.3663,
+          "confidence": 0.3609
+        },
+        {
+          "bin_range": "0.4-0.5",
+          "count": 337,
+          "accuracy": 0.4688,
+          "confidence": 0.4575
+        },
+        {
+          "bin_range": "0.5-0.6",
+          "count": 509,
+          "accuracy": 0.5422,
+          "confidence": 0.551
+        },
+        {
+          "bin_range": "0.6-0.7",
+          "count": 457,
+          "accuracy": 0.6565,
+          "confidence": 0.6502
+        },
+        {
+          "bin_range": "0.7-0.8",
+          "count": 464,
+          "accuracy": 0.7543,
+          "confidence": 0.7494
+        },
+        {
+          "bin_range": "0.8-0.9",
+          "count": 568,
+          "accuracy": 0.8697,
+          "confidence": 0.8504
+        },
+        {
+          "bin_range": "0.9-1.0",
+          "count": 460,
+          "accuracy": 0.9565,
+          "confidence": 0.9447
+        }
+      ]
+    }
+  },
+  "LightGBM": {
+    "val": {
+      "multi_class_brier_score": 0.2379,
+      "expected_calibration_error": 0.096,
+      "reliability_bins": [
+        {
+          "bin_range": "0.3-0.4",
+          "count": 2,
+          "accuracy": 0.0,
+          "confidence": 0.3567
+        },
+        {
+          "bin_range": "0.4-0.5",
+          "count": 9,
+          "accuracy": 0.4444,
+          "confidence": 0.4559
+        },
+        {
+          "bin_range": "0.5-0.6",
+          "count": 39,
+          "accuracy": 0.5128,
+          "confidence": 0.5511
+        },
+        {
+          "bin_range": "0.6-0.7",
+          "count": 30,
+          "accuracy": 0.6,
+          "confidence": 0.6512
+        },
+        {
+          "bin_range": "0.7-0.8",
+          "count": 48,
+          "accuracy": 0.5625,
+          "confidence": 0.7556
+        },
+        {
+          "bin_range": "0.8-0.9",
+          "count": 67,
+          "accuracy": 0.4925,
+          "confidence": 0.8498
+        },
+        {
+          "bin_range": "0.9-1.0",
+          "count": 1260,
+          "accuracy": 0.9103,
+          "confidence": 0.9918
+        }
+      ]
+    },
+    "test": {
+      "multi_class_brier_score": 0.2283,
+      "expected_calibration_error": 0.0935,
+      "reliability_bins": [
+        {
+          "bin_range": "0.3-0.4",
+          "count": 1,
+          "accuracy": 1.0,
+          "confidence": 0.3294
+        },
+        {
+          "bin_range": "0.4-0.5",
+          "count": 12,
+          "accuracy": 0.25,
+          "confidence": 0.4664
+        },
+        {
+          "bin_range": "0.5-0.6",
+          "count": 75,
+          "accuracy": 0.5067,
+          "confidence": 0.5508
+        },
+        {
+          "bin_range": "0.6-0.7",
+          "count": 89,
+          "accuracy": 0.4944,
+          "confidence": 0.6543
+        },
+        {
+          "bin_range": "0.7-0.8",
+          "count": 86,
+          "accuracy": 0.5349,
+          "confidence": 0.7454
+        },
+        {
+          "bin_range": "0.8-0.9",
+          "count": 128,
+          "accuracy": 0.625,
+          "confidence": 0.8541
+        },
+        {
+          "bin_range": "0.9-1.0",
+          "count": 2519,
+          "accuracy": 0.9119,
+          "confidence": 0.9928
+        }
+      ]
+    }
+  },
+  "Random_Forest": {
+    "val": {
+      "multi_class_brier_score": 0.3617,
+      "expected_calibration_error": 0.2382,
+      "reliability_bins": [
+        {
+          "bin_range": "0.1-0.2",
+          "count": 1,
+          "accuracy": 0.0,
+          "confidence": 0.1856
+        },
+        {
+          "bin_range": "0.2-0.3",
+          "count": 70,
+          "accuracy": 0.3714,
+          "confidence": 0.2704
+        },
+        {
+          "bin_range": "0.3-0.4",
+          "count": 231,
+          "accuracy": 0.5411,
+          "confidence": 0.3559
+        },
+        {
+          "bin_range": "0.4-0.5",
+          "count": 283,
+          "accuracy": 0.7279,
+          "confidence": 0.4518
+        },
+        {
+          "bin_range": "0.5-0.6",
+          "count": 274,
+          "accuracy": 0.865,
+          "confidence": 0.5512
+        },
+        {
+          "bin_range": "0.6-0.7",
+          "count": 262,
+          "accuracy": 0.9237,
+          "confidence": 0.6476
+        },
+        {
+          "bin_range": "0.7-0.8",
+          "count": 177,
+          "accuracy": 0.9718,
+          "confidence": 0.747
+        },
+        {
+          "bin_range": "0.8-0.9",
+          "count": 116,
+          "accuracy": 1.0,
+          "confidence": 0.8421
+        },
+        {
+          "bin_range": "0.9-1.0",
+          "count": 41,
+          "accuracy": 1.0,
+          "confidence": 0.9523
+        }
+      ]
+    },
+    "test": {
+      "multi_class_brier_score": 0.3653,
+      "expected_calibration_error": 0.2187,
+      "reliability_bins": [
+        {
+          "bin_range": "0.1-0.2",
+          "count": 3,
+          "accuracy": 0.3333,
+          "confidence": 0.1909
+        },
+        {
+          "bin_range": "0.2-0.3",
+          "count": 120,
+          "accuracy": 0.4583,
+          "confidence": 0.2659
+        },
+        {
+          "bin_range": "0.3-0.4",
+          "count": 414,
+          "accuracy": 0.5097,
+          "confidence": 0.3536
+        },
+        {
+          "bin_range": "0.4-0.5",
+          "count": 575,
+          "accuracy": 0.6748,
+          "confidence": 0.4532
+        },
+        {
+          "bin_range": "0.5-0.6",
+          "count": 580,
+          "accuracy": 0.831,
+          "confidence": 0.5497
+        },
+        {
+          "bin_range": "0.6-0.7",
+          "count": 504,
+          "accuracy": 0.9107,
+          "confidence": 0.6471
+        },
+        {
+          "bin_range": "0.7-0.8",
+          "count": 383,
+          "accuracy": 0.9661,
+          "confidence": 0.7452
+        },
+        {
+          "bin_range": "0.8-0.9",
+          "count": 234,
+          "accuracy": 0.9957,
+          "confidence": 0.8421
+        },
+        {
+          "bin_range": "0.9-1.0",
+          "count": 97,
+          "accuracy": 0.9897,
+          "confidence": 0.9464
+        }
+      ]
+    }
+  },
+  "Logistic_Regression": {
+    "val": {
+      "multi_class_brier_score": 0.4332,
+      "expected_calibration_error": 0.091,
+      "reliability_bins": [
+        {
+          "bin_range": "0.3-0.4",
+          "count": 11,
+          "accuracy": 0.3636,
+          "confidence": 0.3763
+        },
+        {
+          "bin_range": "0.4-0.5",
+          "count": 72,
+          "accuracy": 0.3611,
+          "confidence": 0.4618
+        },
+        {
+          "bin_range": "0.5-0.6",
+          "count": 199,
+          "accuracy": 0.5377,
+          "confidence": 0.5499
+        },
+        {
+          "bin_range": "0.6-0.7",
+          "count": 195,
+          "accuracy": 0.6513,
+          "confidence": 0.6458
+        },
+        {
+          "bin_range": "0.7-0.8",
+          "count": 177,
+          "accuracy": 0.6215,
+          "confidence": 0.7497
+        },
+        {
+          "bin_range": "0.8-0.9",
+          "count": 213,
+          "accuracy": 0.7606,
+          "confidence": 0.8506
+        },
+        {
+          "bin_range": "0.9-1.0",
+          "count": 588,
+          "accuracy": 0.8384,
+          "confidence": 0.9739
+        }
+      ]
+    },
+    "test": {
+      "multi_class_brier_score": 0.4223,
+      "expected_calibration_error": 0.0932,
+      "reliability_bins": [
+        {
+          "bin_range": "0.3-0.4",
+          "count": 32,
+          "accuracy": 0.4062,
+          "confidence": 0.3692
+        },
+        {
+          "bin_range": "0.4-0.5",
+          "count": 134,
+          "accuracy": 0.4179,
+          "confidence": 0.4619
+        },
+        {
+          "bin_range": "0.5-0.6",
+          "count": 366,
+          "accuracy": 0.5137,
+          "confidence": 0.5516
+        },
+        {
+          "bin_range": "0.6-0.7",
+          "count": 325,
+          "accuracy": 0.5846,
+          "confidence": 0.6487
+        },
+        {
+          "bin_range": "0.7-0.8",
+          "count": 398,
+          "accuracy": 0.6834,
+          "confidence": 0.7532
+        },
+        {
+          "bin_range": "0.8-0.9",
+          "count": 426,
+          "accuracy": 0.73,
+          "confidence": 0.8534
+        },
+        {
+          "bin_range": "0.9-1.0",
+          "count": 1229,
+          "accuracy": 0.8544,
+          "confidence": 0.9758
+        }
+      ]
+    }
+  },
+  "Voting_Ensemble": {
+    "val": {
+      "multi_class_brier_score": 0.2764,
+      "expected_calibration_error": 0.1454,
+      "reliability_bins": [
+        {
+          "bin_range": "0.2-0.3",
+          "count": 5,
+          "accuracy": 0.0,
+          "confidence": 0.2781
+        },
+        {
+          "bin_range": "0.3-0.4",
+          "count": 50,
+          "accuracy": 0.44,
+          "confidence": 0.3676
+        },
+        {
+          "bin_range": "0.4-0.5",
+          "count": 152,
+          "accuracy": 0.5329,
+          "confidence": 0.4531
+        },
+        {
+          "bin_range": "0.5-0.6",
+          "count": 246,
+          "accuracy": 0.7073,
+          "confidence": 0.5507
+        },
+        {
+          "bin_range": "0.6-0.7",
+          "count": 265,
+          "accuracy": 0.834,
+          "confidence": 0.6542
+        },
+        {
+          "bin_range": "0.7-0.8",
+          "count": 320,
+          "accuracy": 0.9375,
+          "confidence": 0.751
+        },
+        {
+          "bin_range": "0.8-0.9",
+          "count": 293,
+          "accuracy": 0.9863,
+          "confidence": 0.8482
+        },
+        {
+          "bin_range": "0.9-1.0",
+          "count": 124,
+          "accuracy": 1.0,
+          "confidence": 0.9354
+        }
+      ]
+    },
+    "test": {
+      "multi_class_brier_score": 0.2785,
+      "expected_calibration_error": 0.1438,
+      "reliability_bins": [
+        {
+          "bin_range": "0.2-0.3",
+          "count": 5,
+          "accuracy": 0.4,
+          "confidence": 0.2805
+        },
+        {
+          "bin_range": "0.3-0.4",
+          "count": 80,
+          "accuracy": 0.5375,
+          "confidence": 0.368
+        },
+        {
+          "bin_range": "0.4-0.5",
+          "count": 342,
+          "accuracy": 0.5556,
+          "confidence": 0.4544
+        },
+        {
+          "bin_range": "0.5-0.6",
+          "count": 482,
+          "accuracy": 0.7116,
+          "confidence": 0.5492
+        },
+        {
+          "bin_range": "0.6-0.7",
+          "count": 516,
+          "accuracy": 0.8624,
+          "confidence": 0.6513
+        },
+        {
+          "bin_range": "0.7-0.8",
+          "count": 574,
+          "accuracy": 0.9077,
+          "confidence": 0.7519
+        },
+        {
+          "bin_range": "0.8-0.9",
+          "count": 618,
+          "accuracy": 0.9725,
+          "confidence": 0.8489
+        },
+        {
+          "bin_range": "0.9-1.0",
+          "count": 293,
+          "accuracy": 0.9932,
+          "confidence": 0.9362
+        }
+      ]
+    }
+  },
+  "Stacking_Ensemble": {
+    "val": {
+      "multi_class_brier_score": 0.2691,
+      "expected_calibration_error": 0.0841,
+      "reliability_bins": [
+        {
+          "bin_range": "0.2-0.3",
+          "count": 1,
+          "accuracy": 0.0,
+          "confidence": 0.2551
+        },
+        {
+          "bin_range": "0.3-0.4",
+          "count": 7,
+          "accuracy": 0.4286,
+          "confidence": 0.3658
+        },
+        {
+          "bin_range": "0.4-0.5",
+          "count": 26,
+          "accuracy": 0.4615,
+          "confidence": 0.4618
+        },
+        {
+          "bin_range": "0.5-0.6",
+          "count": 59,
+          "accuracy": 0.3898,
+          "confidence": 0.5492
+        },
+        {
+          "bin_range": "0.6-0.7",
+          "count": 68,
+          "accuracy": 0.6324,
+          "confidence": 0.6538
+        },
+        {
+          "bin_range": "0.7-0.8",
+          "count": 72,
+          "accuracy": 0.5694,
+          "confidence": 0.7444
+        },
+        {
+          "bin_range": "0.8-0.9",
+          "count": 115,
+          "accuracy": 0.6522,
+          "confidence": 0.8535
+        },
+        {
+          "bin_range": "0.9-1.0",
+          "count": 1107,
+          "accuracy": 0.916,
+          "confidence": 0.9838
+        }
+      ]
+    },
+    "test": {
+      "multi_class_brier_score": 0.2615,
+      "expected_calibration_error": 0.0822,
+      "reliability_bins": [
+        {
+          "bin_range": "0.3-0.4",
+          "count": 14,
+          "accuracy": 0.5,
+          "confidence": 0.3638
+        },
+        {
+          "bin_range": "0.4-0.5",
+          "count": 47,
+          "accuracy": 0.5532,
+          "confidence": 0.4643
+        },
+        {
+          "bin_range": "0.5-0.6",
+          "count": 137,
+          "accuracy": 0.4307,
+          "confidence": 0.5538
+        },
+        {
+          "bin_range": "0.6-0.7",
+          "count": 129,
+          "accuracy": 0.5814,
+          "confidence": 0.6507
+        },
+        {
+          "bin_range": "0.7-0.8",
+          "count": 143,
+          "accuracy": 0.6503,
+          "confidence": 0.7532
+        },
+        {
+          "bin_range": "0.8-0.9",
+          "count": 231,
+          "accuracy": 0.7489,
+          "confidence": 0.8555
+        },
+        {
+          "bin_range": "0.9-1.0",
+          "count": 2209,
+          "accuracy": 0.9081,
+          "confidence": 0.9841
+        }
+      ]
+    }
+  }
+}

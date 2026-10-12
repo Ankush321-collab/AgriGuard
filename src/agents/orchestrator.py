@@ -53,16 +53,51 @@ def rejection_terminal_node(state: AgriGuardState) -> AgriGuardState:
     }
 
 
+def review_terminal_node(state: AgriGuardState) -> AgriGuardState:
+    """Generate explicit expert agronomy review notice when validation or prediction is marginal."""
+    reason = state.get("policy_reason", "Verification evidence is marginal or unavailable.")
+    action = state.get("suggested_action", "Consult an agricultural extension specialist.")
+
+    notice = f"""
+[AgriGuard-ML: Pipeline Result - REVIEW REQUIRED]
+* Status: REVIEW (Uncertain Species or Marginal Diagnostic Confidence)
+* Reason: {reason}
+* Critical Safety Warning: AgriGuard-ML abstains from providing chemical spray guidance when verification evidence is incomplete.
+* Recommended Action: {action} Submit physical leaf samples or clear macro photos to your local university extension office.
+"""
+    return {
+        **state,
+        "final_advisory": notice,
+        "safety_validated": True,
+    }
+
+
+def route_quality_check(state: AgriGuardState) -> str:
+    """Short-circuit workflow immediately if image quality failed."""
+    if not state.get("quality_passed", False):
+        return "policy_router_node"
+    return "leaf_presence_node"
+
+
+def route_leaf_presence_check(state: AgriGuardState) -> str:
+    """Short-circuit workflow immediately if no plant foliage was detected."""
+    if not state.get("leaf_presence_passed", False):
+        return "policy_router_node"
+    return "apple_validator_node"
+
+
 def route_policy_decision(state: AgriGuardState) -> str:
-    """Conditional edge router: PASS proceeds to diagnosis, otherwise terminal rejection."""
+    """Conditional edge router: PASS proceeds to diagnosis, REVIEW routes to expert notice, else rejection."""
     decision = state.get("policy_decision", "REJECT")
     if decision == "PASS":
         return "severity_node"
+    if decision == "REVIEW":
+        return "review_terminal_node"
     return "rejection_terminal_node"
 
 
 def build_orchestrator_graph():
-    """Build and compile the LangGraph StateGraph."""
+    """Build and compile the LangGraph StateGraph with short-circuiting validation gates."""
     if not LANGGRAPH_AVAILABLE:
         return None
 
@@ -79,19 +114,35 @@ def build_orchestrator_graph():
     workflow.add_node("rag_node", run_rag_retrieval_agent)
     workflow.add_node("llm_advisory_node", run_llm_advisory_agent)
     workflow.add_node("rejection_terminal_node", rejection_terminal_node)
+    workflow.add_node("review_terminal_node", review_terminal_node)
 
-    # Linear validation edges
+    # Short-circuiting validation edges
     workflow.set_entry_point("quality_node")
-    workflow.add_edge("quality_node", "leaf_presence_node")
-    workflow.add_edge("leaf_presence_node", "apple_validator_node")
+    workflow.add_conditional_edges(
+        "quality_node",
+        route_quality_check,
+        {
+            "policy_router_node": "policy_router_node",
+            "leaf_presence_node": "leaf_presence_node",
+        },
+    )
+    workflow.add_conditional_edges(
+        "leaf_presence_node",
+        route_leaf_presence_check,
+        {
+            "policy_router_node": "policy_router_node",
+            "apple_validator_node": "apple_validator_node",
+        },
+    )
     workflow.add_edge("apple_validator_node", "policy_router_node")
 
-    # Conditional edge after Policy Router
+    # Conditional routing after Policy Router
     workflow.add_conditional_edges(
         "policy_router_node",
         route_policy_decision,
         {
             "severity_node": "severity_node",
+            "review_terminal_node": "review_terminal_node",
             "rejection_terminal_node": "rejection_terminal_node",
         },
     )
@@ -102,12 +153,13 @@ def build_orchestrator_graph():
     workflow.add_edge("rag_node", "llm_advisory_node")
     workflow.add_edge("llm_advisory_node", END)
     workflow.add_edge("rejection_terminal_node", END)
+    workflow.add_edge("review_terminal_node", END)
 
     return workflow.compile()
 
 
 def run_pipeline(image_path: str) -> AgriGuardState:
-    """Execute the multi-agent pipeline with LangGraph or sequential fallback."""
+    """Execute the multi-agent pipeline with LangGraph or short-circuiting sequential fallback."""
     initial_state: AgriGuardState = {
         "image_path": str(image_path),
         "quality_passed": False,
@@ -122,11 +174,25 @@ def run_pipeline(image_path: str) -> AgriGuardState:
     if graph is not None:
         return graph.invoke(initial_state)
 
-    # Deterministic sequential fallback
+    # Short-circuiting sequential fallback
     s = run_quality_agent(initial_state)
+    if not s.get("quality_passed", False):
+        s = run_policy_router(s)
+        return rejection_terminal_node(s)
+
     s = run_leaf_presence_agent(s)
+    if not s.get("leaf_presence_passed", False):
+        s = run_policy_router(s)
+        return rejection_terminal_node(s)
+
     s = run_apple_validator_agent(s)
     s = run_policy_router(s)
+
+    dec = s.get("policy_decision")
+    if dec == "REJECT" or dec == "RETAKE":
+        return rejection_terminal_node(s)
+    if dec == "REVIEW":
+        return review_terminal_node(s)
 
     if route_policy_decision(s) == "rejection_terminal_node":
         return rejection_terminal_node(s)

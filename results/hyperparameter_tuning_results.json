@@ -7,7 +7,7 @@
     },
     "best_cv_f1_macro": 0.59812802581878,
     "tune_time_seconds": 52.84349729999667,
-    "fit_time_seconds": 0.011718800000380725
+    "fit_time_seconds": 0.022512199997436255
   },
   "SVM": {
     "best_params": {
@@ -16,7 +16,7 @@
     },
     "best_cv_f1_macro": 0.6275926919323895,
     "tune_time_seconds": 151.6676298000093,
-    "fit_time_seconds": 283.0705452000111
+    "fit_time_seconds": 418.82087820000015
   },
   "LightGBM": {
     "best_params": {
@@ -28,7 +28,7 @@
     },
     "best_cv_f1_macro": 0.8272525544994805,
     "tune_time_seconds": 627.0784089000081,
-    "fit_time_seconds": 95.73520009999629
+    "fit_time_seconds": 108.69131150000612
   },
   "Random_Forest": {
     "best_params": {
@@ -40,6 +40,6 @@
     },
     "best_cv_f1_macro": 0.7884873176274274,
     "tune_time_seconds": 37.99427500000456,
-    "fit_time_seconds": 6.545232699994813
+    "fit_time_seconds": 7.373438700014958
   }
 }

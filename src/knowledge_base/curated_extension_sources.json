@@ -1,0 +1,116 @@
+{
+  "sources": [
+    {
+      "disease_target": "Scab",
+      "disease_synonyms": ["Apple scab", "Venturia inaequalis", "scab"],
+      "title": "CABI PlantwisePlus Technical Factsheet: Apple Scab (Venturia inaequalis)",
+      "organization": "CABI Digital Library / PlantwisePlus Knowledge Bank",
+      "publication_date": "2024",
+      "region": "Global Apple Orchards",
+      "url": "https://www.plantwiseplusknowledgebank.org/",
+      "retrieved_passage": "Primary infections occur in spring from ascospores produced in overwintered fallen leaves. Management relies heavily on cultural sanitation: shred or disk fallen apple leaf litter in late autumn or apply 5% agricultural urea spray to accelerate decomposition and reduce ascospore inoculum. Open tree canopies via pruning to facilitate sunlight penetration and rapid leaf drying. If conditions favor infection during green-tip through petal fall, apply protective bio-fungicides or registered fungicides in compliance with local agricultural extension guidelines. Rotate FRAC fungicide groups to prevent development of resistance.",
+      "cultural_controls": [
+        "Shred, till, or compost overwintered fallen leaf litter to eliminate primary ascospore inoculum.",
+        "Prune dense interior water-shoots to improve airflow and shorten leaf wetness periods.",
+        "Avoid overhead sprinkler irrigation; irrigate strictly at the soil base."
+      ],
+      "chemical_regulations": "Chemical interventions must be verified with regional university extension schedules. Chemical rates depend strictly on local regulations and EPA/label compliance. Consult local extension agents for registered active ingredients."
+    },
+    {
+      "disease_target": "Rust",
+      "disease_synonyms": ["Cedar apple rust", "Gymnosporangium juniperi-virginianae", "apple rust"],
+      "title": "UC IPM Pest Management Guidelines: Apple Rust Diseases",
+      "organization": "University of California Statewide Integrated Pest Management Program",
+      "publication_date": "2023",
+      "region": "Commercial Apple Growing Regions",
+      "url": "https://ipm.ucanr.edu/",
+      "retrieved_passage": "Cedar apple rust requires two alternating hosts to complete its life cycle: apple (Malus domestica) and eastern redcedar or juniper (Juniperus spp.). Bright yellow-orange spots appear on the upper leaf surface in late spring. Eradicate or remove nearby alternate juniper hosts within 1 to 2 miles of the orchard where feasible. Plant rust-resistant apple cultivars such as Freedom, Liberty, or Enterprise. When planting near established cedar stands, apply protective fungicides starting from the pink bud stage according to local extension advisories.",
+      "cultural_controls": [
+        "Remove wild juniper or cedar trees within 500 meters to 1 mile of the apple block where feasible.",
+        "Plant resistant cultivars (Liberty, Enterprise, Freedom) in high-pressure regions.",
+        "Inspect surrounding conifers in early spring and prune off emerging brown galls."
+      ],
+      "chemical_regulations": "Apply registered protective fungicides only during spring spore release periods if severe defoliation is threatened. Refer to local extension recommendations for current registered active substances."
+    },
+    {
+      "disease_target": "Frogeye leaf spot",
+      "disease_synonyms": ["Black rot", "Botryosphaeria obtusa", "frogeye"],
+      "title": "CABI PlantwisePlus Diagnostic Guide: Black Rot & Frogeye Leaf Spot",
+      "organization": "CABI Digital Library / PlantwisePlus",
+      "publication_date": "2024",
+      "region": "Temperate Fruit Production",
+      "url": "https://www.plantwiseplusknowledgebank.org/",
+      "retrieved_passage": "Frogeye leaf spot is the foliar phase of black rot caused by Botryosphaeria obtusa. Leaf lesions are circular with purple margins and light brown/tan centers resembling a frog's eye. Spores overwinter in fire blight cankers, dead mummified fruit, and dead wood. Control depends on diligent orchard sanitation: prune out dead wood, cankers, and remove all mummified fruit during winter dormancy. Burn or bury prunings promptly to eliminate spore reservoirs.",
+      "cultural_controls": [
+        "Prune out dead wood, fire blight cankers, and remove dried mummified fruit during winter pruning.",
+        "Burn, bury, or remove all pruned brush from the orchard perimeter.",
+        "Prevent physical bark injury and sunburn on branches to avoid fungal colonization."
+      ],
+      "chemical_regulations": "Protective fungicide sprays from pink bud through cover sprays should align with local extension recommendations. Check pesticide registrations for approved active ingredients."
+    },
+    {
+      "disease_target": "Powdery mildew",
+      "disease_synonyms": ["Podosphaera leucotricha", "powdery mildew", "apple mildew"],
+      "title": "UC IPM Guidelines: Apple Powdery Mildew Management",
+      "organization": "University of California Agriculture and Natural Resources",
+      "publication_date": "2023",
+      "region": "Commercial Fruit Production",
+      "url": "https://ipm.ucanr.edu/",
+      "retrieved_passage": "Podosphaera leucotricha overwinters in vegetative buds infected during the prior season. White, felt-like fungal growth appears on young leaves and shoots, causing curling, distortion, and stunted growth. Unlike scab, powdery mildew spores germinate in high humidity without requiring free water on the leaf surface. Prune infected white shoot terminals during dormant and pre-bloom inspections. Apply protective bio-fungicide or horticultural sulfur sprays as buds open in spring.",
+      "cultural_controls": [
+        "Prune out 'silvered' overwintered shoot terminals during dormant pruning and early spring.",
+        "Maintain open tree canopy to maximize interior air movement.",
+        "Plant tolerant cultivars where mildew pressure is historically severe."
+      ],
+      "chemical_regulations": "Sulfur and biological controls should be applied according to product label rates. Do not apply sulfur when temperatures exceed 32°C (90°F) to avoid leaf phytotoxicity."
+    },
+    {
+      "disease_target": "Mosaic",
+      "disease_synonyms": ["Apple mosaic virus", "ApMV", "mosaic"],
+      "title": "CABI Crop Protection Compendium: Apple Mosaic Virus (ApMV)",
+      "organization": "CABI Digital Library",
+      "publication_date": "2024",
+      "region": "Worldwide",
+      "url": "https://www.plantwiseplusknowledgebank.org/",
+      "retrieved_passage": "Apple mosaic virus produces vivid cream-colored, pale yellow banding, vein clearing, or ring spot patterns on foliage. The virus is graft-transmitted through infected budwood or rootstocks and is not transmitted by insect vectors or true seed. Chemical treatments are completely ineffective against viruses. Control is achieved entirely by using certified virus-tested rootstocks and scion wood. Severely debilitated trees should be rogued and replaced with certified disease-free planting stock.",
+      "cultural_controls": [
+        "Source exclusively certified virus-free rootstocks and scion budwood from certified nurseries.",
+        "Disinfect grafting tools between trees to prevent mechanical cross-contamination.",
+        "Rogue and replace trees showing chronic severe chlorosis and yield suppression."
+      ],
+      "chemical_regulations": "No chemical or fungicide sprays are effective against viral infections. Do NOT apply fungicides or insecticides for virus management."
+    },
+    {
+      "disease_target": "Alternaria leaf spot",
+      "disease_synonyms": ["Alternaria mali", "Alternaria blotch", "Alternaria"],
+      "title": "CABI PlantwisePlus: Alternaria Leaf Blotch of Apple (Alternaria mali)",
+      "organization": "CABI PlantwisePlus Knowledge Bank",
+      "publication_date": "2024",
+      "region": "Commercial Orchards",
+      "url": "https://www.plantwiseplusknowledgebank.org/",
+      "retrieved_passage": "Alternaria leaf spot causes circular brown-black lesions with concentric rings, often leading to premature summer defoliation on susceptible varieties such as Gala and Golden Delicious. Fungi overwinter in dead leaves on the orchard floor and dormant twigs. Accelerate leaf litter decomposition and prune for sunlight and ventilation. Fungicide resistance to several single-site modes of action has been documented in Alternaria mali; consultation with local extension specialists is mandatory before applying chemicals.",
+      "cultural_controls": [
+        "Shred and compost fallen leaves to minimize primary inoculum reservoirs.",
+        "Prune for rapid leaf surface drying and maintain adequate nutrition to prevent leaf stress.",
+        "Monitor European red mite populations, as heavy mite feeding increases susceptibility to Alternaria blotch."
+      ],
+      "chemical_regulations": "Rotate fungicide chemistries across different FRAC codes. Confirm current registrations with your county extension agent."
+    },
+    {
+      "disease_target": "Healthy",
+      "disease_synonyms": ["Healthy foliage", "Uninfected", "Preventive care"],
+      "title": "UC IPM General Apple Orchard Best Management Practices",
+      "organization": "University of California Integrated Pest Management",
+      "publication_date": "2024",
+      "region": "Commercial Apple Orchards",
+      "url": "https://ipm.ucanr.edu/",
+      "retrieved_passage": "Maintaining vigorous, healthy apple foliage is the foundational pillar of integrated pest management. Adequate canopy airflow, balanced nitrogen fertility (avoiding excessive vegetative growth that attracts aphids and mildew), and regular scout monitoring ensure that disease pressure remains below economic injury thresholds. No chemical application is needed on healthy leaves.",
+      "cultural_controls": [
+        "Maintain routine weekly visual scouting during the active growing season.",
+        "Balance tree nutrition and avoid excessive nitrogen fertilizer that promotes tender, susceptible tissue.",
+        "Maintain clean tree basins and mow orchard alleys to promote predatory insect habitat."
+      ],
+      "chemical_regulations": "No chemical sprays required. Avoid unnecessary pesticide applications to protect beneficial predatory mites and pollinators."
+    }
+  ]
+}

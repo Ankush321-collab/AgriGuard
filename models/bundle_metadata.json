@@ -1,0 +1,35 @@
+{
+  "project": "AgriGuard-ML",
+  "feature_pipeline_version": "848_multimodal_v1.0",
+  "feature_dimension": 848,
+  "primary_model_name": "Voting_Ensemble",
+  "primary_model_file": "Voting_Ensemble.joblib",
+  "scaler_file": "scaler.joblib",
+  "label_encoder_file": "label_encoder.joblib",
+  "class_names": [
+    "Alternaria leaf spot",
+    "Brown spot",
+    "Frogeye leaf spot",
+    "Grey spot",
+    "Healthy",
+    "Mosaic",
+    "Powdery mildew",
+    "Rust",
+    "Scab"
+  ],
+  "number_of_classes": 9,
+  "selected_confidence_threshold": 0.6,
+  "split_manifest_file": "results/split_manifest.csv",
+  "audit_file": "results/data_integrity_audit.json",
+  "evaluation_file": "results/trustworthy_model_comparison.csv",
+  "created_at": "2026-10-12T18:10:30Z",
+  "environment_dependencies": {
+    "python": "3.12.14 (main, Aug 14 2026, 15:40:22) [MSC v.1944 64 bit (AMD64)]",
+    "platform": "Windows-11-10.0.26300-SP0",
+    "scikit-learn": "1.9.1",
+    "lightgbm": "4.7.0",
+    "opencv-python": "5.0.0",
+    "mahotas": "1.4.19",
+    "scikit-image": "0.26.0"
+  }
+}

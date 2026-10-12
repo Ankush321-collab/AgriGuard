@@ -17,7 +17,8 @@ from pathlib import Path
 # PASTE YOUR IMAGE PATH HERE TO TEST:
 # ==============================================================================
 # IMAGE_PATH = "Agentic/tseting/other_fruit_leaf/test2.png"
-IMAGE_PATH = "Agentic/tseting/other_fruit_leaf/test6.png"
+IMAGE_PATH = "Agentic/tseting/blur/img2.png"
+
 
 # Quick Sample Test Paths (uncomment any to test):
 # IMAGE_PATH = "Data/Health/Health (6).jpg"                      # Valid Healthy Apple Leaf (PASS)

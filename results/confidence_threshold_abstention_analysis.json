@@ -1,0 +1,926 @@
+{
+  "KNN": {
+    "val_sweep": [
+      {
+        "threshold": 0.0,
+        "accepted_samples": 1455,
+        "abstain_samples": 0,
+        "abstain_rate_pct": 0.0,
+        "coverage_pct": 100.0,
+        "accuracy_on_accepted": 0.6351,
+        "macro_f1_on_accepted": 0.6227
+      },
+      {
+        "threshold": 0.5,
+        "accepted_samples": 1343,
+        "abstain_samples": 112,
+        "abstain_rate_pct": 7.7,
+        "coverage_pct": 92.3,
+        "accuracy_on_accepted": 0.6597,
+        "macro_f1_on_accepted": 0.6494
+      },
+      {
+        "threshold": 0.6,
+        "accepted_samples": 1340,
+        "abstain_samples": 115,
+        "abstain_rate_pct": 7.9,
+        "coverage_pct": 92.1,
+        "accuracy_on_accepted": 0.6597,
+        "macro_f1_on_accepted": 0.6466
+      },
+      {
+        "threshold": 0.7,
+        "accepted_samples": 649,
+        "abstain_samples": 806,
+        "abstain_rate_pct": 55.4,
+        "coverage_pct": 44.6,
+        "accuracy_on_accepted": 0.792,
+        "macro_f1_on_accepted": 0.7589
+      },
+      {
+        "threshold": 0.8,
+        "accepted_samples": 632,
+        "abstain_samples": 823,
+        "abstain_rate_pct": 56.56,
+        "coverage_pct": 43.44,
+        "accuracy_on_accepted": 0.788,
+        "macro_f1_on_accepted": 0.737
+      },
+      {
+        "threshold": 0.9,
+        "accepted_samples": 600,
+        "abstain_samples": 855,
+        "abstain_rate_pct": 58.76,
+        "coverage_pct": 41.24,
+        "accuracy_on_accepted": 0.78,
+        "macro_f1_on_accepted": 0.7335
+      },
+      {
+        "threshold": 0.95,
+        "accepted_samples": 583,
+        "abstain_samples": 872,
+        "abstain_rate_pct": 59.93,
+        "coverage_pct": 40.07,
+        "accuracy_on_accepted": 0.7753,
+        "macro_f1_on_accepted": 0.7307
+      }
+    ],
+    "test_sweep": [
+      {
+        "threshold": 0.0,
+        "accepted_samples": 2910,
+        "abstain_samples": 0,
+        "abstain_rate_pct": 0.0,
+        "coverage_pct": 100.0,
+        "accuracy_on_accepted": 0.6419,
+        "macro_f1_on_accepted": 0.6424
+      },
+      {
+        "threshold": 0.5,
+        "accepted_samples": 2692,
+        "abstain_samples": 218,
+        "abstain_rate_pct": 7.49,
+        "coverage_pct": 92.51,
+        "accuracy_on_accepted": 0.6616,
+        "macro_f1_on_accepted": 0.6612
+      },
+      {
+        "threshold": 0.6,
+        "accepted_samples": 2683,
+        "abstain_samples": 227,
+        "abstain_rate_pct": 7.8,
+        "coverage_pct": 92.2,
+        "accuracy_on_accepted": 0.6627,
+        "macro_f1_on_accepted": 0.6611
+      },
+      {
+        "threshold": 0.7,
+        "accepted_samples": 1388,
+        "abstain_samples": 1522,
+        "abstain_rate_pct": 52.3,
+        "coverage_pct": 47.7,
+        "accuracy_on_accepted": 0.8055,
+        "macro_f1_on_accepted": 0.7797
+      },
+      {
+        "threshold": 0.8,
+        "accepted_samples": 1368,
+        "abstain_samples": 1542,
+        "abstain_rate_pct": 52.99,
+        "coverage_pct": 47.01,
+        "accuracy_on_accepted": 0.8041,
+        "macro_f1_on_accepted": 0.7792
+      },
+      {
+        "threshold": 0.9,
+        "accepted_samples": 1292,
+        "abstain_samples": 1618,
+        "abstain_rate_pct": 55.6,
+        "coverage_pct": 44.4,
+        "accuracy_on_accepted": 0.7949,
+        "macro_f1_on_accepted": 0.768
+      },
+      {
+        "threshold": 0.95,
+        "accepted_samples": 1263,
+        "abstain_samples": 1647,
+        "abstain_rate_pct": 56.6,
+        "coverage_pct": 43.4,
+        "accuracy_on_accepted": 0.791,
+        "macro_f1_on_accepted": 0.7657
+      }
+    ]
+  },
+  "SVM": {
+    "val_sweep": [
+      {
+        "threshold": 0.0,
+        "accepted_samples": 1455,
+        "abstain_samples": 0,
+        "abstain_rate_pct": 0.0,
+        "coverage_pct": 100.0,
+        "accuracy_on_accepted": 0.7258,
+        "macro_f1_on_accepted": 0.7454
+      },
+      {
+        "threshold": 0.5,
+        "accepted_samples": 1258,
+        "abstain_samples": 197,
+        "abstain_rate_pct": 13.54,
+        "coverage_pct": 86.46,
+        "accuracy_on_accepted": 0.7663,
+        "macro_f1_on_accepted": 0.7965
+      },
+      {
+        "threshold": 0.6,
+        "accepted_samples": 999,
+        "abstain_samples": 456,
+        "abstain_rate_pct": 31.34,
+        "coverage_pct": 68.66,
+        "accuracy_on_accepted": 0.8198,
+        "macro_f1_on_accepted": 0.8308
+      },
+      {
+        "threshold": 0.7,
+        "accepted_samples": 780,
+        "abstain_samples": 675,
+        "abstain_rate_pct": 46.39,
+        "coverage_pct": 53.61,
+        "accuracy_on_accepted": 0.8628,
+        "macro_f1_on_accepted": 0.8671
+      },
+      {
+        "threshold": 0.8,
+        "accepted_samples": 498,
+        "abstain_samples": 957,
+        "abstain_rate_pct": 65.77,
+        "coverage_pct": 34.23,
+        "accuracy_on_accepted": 0.9257,
+        "macro_f1_on_accepted": 0.902
+      },
+      {
+        "threshold": 0.9,
+        "accepted_samples": 225,
+        "abstain_samples": 1230,
+        "abstain_rate_pct": 84.54,
+        "coverage_pct": 15.46,
+        "accuracy_on_accepted": 0.9778,
+        "macro_f1_on_accepted": 0.9796
+      },
+      {
+        "threshold": 0.95,
+        "accepted_samples": 86,
+        "abstain_samples": 1369,
+        "abstain_rate_pct": 94.09,
+        "coverage_pct": 5.91,
+        "accuracy_on_accepted": 1.0,
+        "macro_f1_on_accepted": 1.0
+      }
+    ],
+    "test_sweep": [
+      {
+        "threshold": 0.0,
+        "accepted_samples": 2910,
+        "abstain_samples": 0,
+        "abstain_rate_pct": 0.0,
+        "coverage_pct": 100.0,
+        "accuracy_on_accepted": 0.7072,
+        "macro_f1_on_accepted": 0.7104
+      },
+      {
+        "threshold": 0.5,
+        "accepted_samples": 2458,
+        "abstain_samples": 452,
+        "abstain_rate_pct": 15.53,
+        "coverage_pct": 84.47,
+        "accuracy_on_accepted": 0.7567,
+        "macro_f1_on_accepted": 0.772
+      },
+      {
+        "threshold": 0.6,
+        "accepted_samples": 1949,
+        "abstain_samples": 961,
+        "abstain_rate_pct": 33.02,
+        "coverage_pct": 66.98,
+        "accuracy_on_accepted": 0.8127,
+        "macro_f1_on_accepted": 0.8175
+      },
+      {
+        "threshold": 0.7,
+        "accepted_samples": 1492,
+        "abstain_samples": 1418,
+        "abstain_rate_pct": 48.73,
+        "coverage_pct": 51.27,
+        "accuracy_on_accepted": 0.8606,
+        "macro_f1_on_accepted": 0.8553
+      },
+      {
+        "threshold": 0.8,
+        "accepted_samples": 1028,
+        "abstain_samples": 1882,
+        "abstain_rate_pct": 64.67,
+        "coverage_pct": 35.33,
+        "accuracy_on_accepted": 0.9086,
+        "macro_f1_on_accepted": 0.8955
+      },
+      {
+        "threshold": 0.9,
+        "accepted_samples": 460,
+        "abstain_samples": 2450,
+        "abstain_rate_pct": 84.19,
+        "coverage_pct": 15.81,
+        "accuracy_on_accepted": 0.9565,
+        "macro_f1_on_accepted": 0.9519
+      },
+      {
+        "threshold": 0.95,
+        "accepted_samples": 191,
+        "abstain_samples": 2719,
+        "abstain_rate_pct": 93.44,
+        "coverage_pct": 6.56,
+        "accuracy_on_accepted": 0.9738,
+        "macro_f1_on_accepted": 0.9533
+      }
+    ]
+  },
+  "LightGBM": {
+    "val_sweep": [
+      {
+        "threshold": 0.0,
+        "accepted_samples": 1455,
+        "abstain_samples": 0,
+        "abstain_rate_pct": 0.0,
+        "coverage_pct": 100.0,
+        "accuracy_on_accepted": 0.8584,
+        "macro_f1_on_accepted": 0.8522
+      },
+      {
+        "threshold": 0.5,
+        "accepted_samples": 1444,
+        "abstain_samples": 11,
+        "abstain_rate_pct": 0.76,
+        "coverage_pct": 99.24,
+        "accuracy_on_accepted": 0.8622,
+        "macro_f1_on_accepted": 0.8596
+      },
+      {
+        "threshold": 0.6,
+        "accepted_samples": 1405,
+        "abstain_samples": 50,
+        "abstain_rate_pct": 3.44,
+        "coverage_pct": 96.56,
+        "accuracy_on_accepted": 0.8719,
+        "macro_f1_on_accepted": 0.8699
+      },
+      {
+        "threshold": 0.7,
+        "accepted_samples": 1375,
+        "abstain_samples": 80,
+        "abstain_rate_pct": 5.5,
+        "coverage_pct": 94.5,
+        "accuracy_on_accepted": 0.8778,
+        "macro_f1_on_accepted": 0.8728
+      },
+      {
+        "threshold": 0.8,
+        "accepted_samples": 1327,
+        "abstain_samples": 128,
+        "abstain_rate_pct": 8.8,
+        "coverage_pct": 91.2,
+        "accuracy_on_accepted": 0.8892,
+        "macro_f1_on_accepted": 0.8844
+      },
+      {
+        "threshold": 0.9,
+        "accepted_samples": 1260,
+        "abstain_samples": 195,
+        "abstain_rate_pct": 13.4,
+        "coverage_pct": 86.6,
+        "accuracy_on_accepted": 0.9103,
+        "macro_f1_on_accepted": 0.9058
+      },
+      {
+        "threshold": 0.95,
+        "accepted_samples": 1174,
+        "abstain_samples": 281,
+        "abstain_rate_pct": 19.31,
+        "coverage_pct": 80.69,
+        "accuracy_on_accepted": 0.931,
+        "macro_f1_on_accepted": 0.9204
+      }
+    ],
+    "test_sweep": [
+      {
+        "threshold": 0.0,
+        "accepted_samples": 2910,
+        "abstain_samples": 0,
+        "abstain_rate_pct": 0.0,
+        "coverage_pct": 100.0,
+        "accuracy_on_accepted": 0.8622,
+        "macro_f1_on_accepted": 0.8518
+      },
+      {
+        "threshold": 0.5,
+        "accepted_samples": 2897,
+        "abstain_samples": 13,
+        "abstain_rate_pct": 0.45,
+        "coverage_pct": 99.55,
+        "accuracy_on_accepted": 0.8647,
+        "macro_f1_on_accepted": 0.8545
+      },
+      {
+        "threshold": 0.6,
+        "accepted_samples": 2822,
+        "abstain_samples": 88,
+        "abstain_rate_pct": 3.02,
+        "coverage_pct": 96.98,
+        "accuracy_on_accepted": 0.8742,
+        "macro_f1_on_accepted": 0.8643
+      },
+      {
+        "threshold": 0.7,
+        "accepted_samples": 2733,
+        "abstain_samples": 177,
+        "abstain_rate_pct": 6.08,
+        "coverage_pct": 93.92,
+        "accuracy_on_accepted": 0.8866,
+        "macro_f1_on_accepted": 0.8782
+      },
+      {
+        "threshold": 0.8,
+        "accepted_samples": 2647,
+        "abstain_samples": 263,
+        "abstain_rate_pct": 9.04,
+        "coverage_pct": 90.96,
+        "accuracy_on_accepted": 0.898,
+        "macro_f1_on_accepted": 0.8898
+      },
+      {
+        "threshold": 0.9,
+        "accepted_samples": 2519,
+        "abstain_samples": 391,
+        "abstain_rate_pct": 13.44,
+        "coverage_pct": 86.56,
+        "accuracy_on_accepted": 0.9119,
+        "macro_f1_on_accepted": 0.9018
+      },
+      {
+        "threshold": 0.95,
+        "accepted_samples": 2394,
+        "abstain_samples": 516,
+        "abstain_rate_pct": 17.73,
+        "coverage_pct": 82.27,
+        "accuracy_on_accepted": 0.9265,
+        "macro_f1_on_accepted": 0.9135
+      }
+    ]
+  },
+  "Random_Forest": {
+    "val_sweep": [
+      {
+        "threshold": 0.0,
+        "accepted_samples": 1455,
+        "abstain_samples": 0,
+        "abstain_rate_pct": 0.0,
+        "coverage_pct": 100.0,
+        "accuracy_on_accepted": 0.8007,
+        "macro_f1_on_accepted": 0.8147
+      },
+      {
+        "threshold": 0.5,
+        "accepted_samples": 870,
+        "abstain_samples": 585,
+        "abstain_rate_pct": 40.21,
+        "coverage_pct": 59.79,
+        "accuracy_on_accepted": 0.9287,
+        "macro_f1_on_accepted": 0.9447
+      },
+      {
+        "threshold": 0.6,
+        "accepted_samples": 596,
+        "abstain_samples": 859,
+        "abstain_rate_pct": 59.04,
+        "coverage_pct": 40.96,
+        "accuracy_on_accepted": 0.9581,
+        "macro_f1_on_accepted": 0.9663
+      },
+      {
+        "threshold": 0.7,
+        "accepted_samples": 334,
+        "abstain_samples": 1121,
+        "abstain_rate_pct": 77.04,
+        "coverage_pct": 22.96,
+        "accuracy_on_accepted": 0.985,
+        "macro_f1_on_accepted": 0.9923
+      },
+      {
+        "threshold": 0.8,
+        "accepted_samples": 157,
+        "abstain_samples": 1298,
+        "abstain_rate_pct": 89.21,
+        "coverage_pct": 10.79,
+        "accuracy_on_accepted": 1.0,
+        "macro_f1_on_accepted": 1.0
+      },
+      {
+        "threshold": 0.9,
+        "accepted_samples": 41,
+        "abstain_samples": 1414,
+        "abstain_rate_pct": 97.18,
+        "coverage_pct": 2.82,
+        "accuracy_on_accepted": 1.0,
+        "macro_f1_on_accepted": 1.0
+      },
+      {
+        "threshold": 0.95,
+        "accepted_samples": 22,
+        "abstain_samples": 1433,
+        "abstain_rate_pct": 98.49,
+        "coverage_pct": 1.51,
+        "accuracy_on_accepted": 1.0,
+        "macro_f1_on_accepted": 1.0
+      }
+    ],
+    "test_sweep": [
+      {
+        "threshold": 0.0,
+        "accepted_samples": 2910,
+        "abstain_samples": 0,
+        "abstain_rate_pct": 0.0,
+        "coverage_pct": 100.0,
+        "accuracy_on_accepted": 0.7887,
+        "macro_f1_on_accepted": 0.7994
+      },
+      {
+        "threshold": 0.5,
+        "accepted_samples": 1798,
+        "abstain_samples": 1112,
+        "abstain_rate_pct": 38.21,
+        "coverage_pct": 61.79,
+        "accuracy_on_accepted": 0.9121,
+        "macro_f1_on_accepted": 0.9307
+      },
+      {
+        "threshold": 0.6,
+        "accepted_samples": 1219,
+        "abstain_samples": 1691,
+        "abstain_rate_pct": 58.11,
+        "coverage_pct": 41.89,
+        "accuracy_on_accepted": 0.9508,
+        "macro_f1_on_accepted": 0.963
+      },
+      {
+        "threshold": 0.7,
+        "accepted_samples": 714,
+        "abstain_samples": 2196,
+        "abstain_rate_pct": 75.46,
+        "coverage_pct": 24.54,
+        "accuracy_on_accepted": 0.979,
+        "macro_f1_on_accepted": 0.9782
+      },
+      {
+        "threshold": 0.8,
+        "accepted_samples": 331,
+        "abstain_samples": 2579,
+        "abstain_rate_pct": 88.63,
+        "coverage_pct": 11.37,
+        "accuracy_on_accepted": 0.994,
+        "macro_f1_on_accepted": 0.9778
+      },
+      {
+        "threshold": 0.9,
+        "accepted_samples": 97,
+        "abstain_samples": 2813,
+        "abstain_rate_pct": 96.67,
+        "coverage_pct": 3.33,
+        "accuracy_on_accepted": 0.9897,
+        "macro_f1_on_accepted": 0.8737
+      },
+      {
+        "threshold": 0.95,
+        "accepted_samples": 41,
+        "abstain_samples": 2869,
+        "abstain_rate_pct": 98.59,
+        "coverage_pct": 1.41,
+        "accuracy_on_accepted": 1.0,
+        "macro_f1_on_accepted": 1.0
+      }
+    ]
+  },
+  "Logistic_Regression": {
+    "val_sweep": [
+      {
+        "threshold": 0.0,
+        "accepted_samples": 1455,
+        "abstain_samples": 0,
+        "abstain_rate_pct": 0.0,
+        "coverage_pct": 100.0,
+        "accuracy_on_accepted": 0.7072,
+        "macro_f1_on_accepted": 0.7232
+      },
+      {
+        "threshold": 0.5,
+        "accepted_samples": 1372,
+        "abstain_samples": 83,
+        "abstain_rate_pct": 5.7,
+        "coverage_pct": 94.3,
+        "accuracy_on_accepted": 0.7281,
+        "macro_f1_on_accepted": 0.7378
+      },
+      {
+        "threshold": 0.6,
+        "accepted_samples": 1173,
+        "abstain_samples": 282,
+        "abstain_rate_pct": 19.38,
+        "coverage_pct": 80.62,
+        "accuracy_on_accepted": 0.7604,
+        "macro_f1_on_accepted": 0.7564
+      },
+      {
+        "threshold": 0.7,
+        "accepted_samples": 978,
+        "abstain_samples": 477,
+        "abstain_rate_pct": 32.78,
+        "coverage_pct": 67.22,
+        "accuracy_on_accepted": 0.7822,
+        "macro_f1_on_accepted": 0.7712
+      },
+      {
+        "threshold": 0.8,
+        "accepted_samples": 801,
+        "abstain_samples": 654,
+        "abstain_rate_pct": 44.95,
+        "coverage_pct": 55.05,
+        "accuracy_on_accepted": 0.8177,
+        "macro_f1_on_accepted": 0.799
+      },
+      {
+        "threshold": 0.9,
+        "accepted_samples": 588,
+        "abstain_samples": 867,
+        "abstain_rate_pct": 59.59,
+        "coverage_pct": 40.41,
+        "accuracy_on_accepted": 0.8384,
+        "macro_f1_on_accepted": 0.8138
+      },
+      {
+        "threshold": 0.95,
+        "accepted_samples": 446,
+        "abstain_samples": 1009,
+        "abstain_rate_pct": 69.35,
+        "coverage_pct": 30.65,
+        "accuracy_on_accepted": 0.8453,
+        "macro_f1_on_accepted": 0.8272
+      }
+    ],
+    "test_sweep": [
+      {
+        "threshold": 0.0,
+        "accepted_samples": 2910,
+        "abstain_samples": 0,
+        "abstain_rate_pct": 0.0,
+        "coverage_pct": 100.0,
+        "accuracy_on_accepted": 0.7148,
+        "macro_f1_on_accepted": 0.713
+      },
+      {
+        "threshold": 0.5,
+        "accepted_samples": 2744,
+        "abstain_samples": 166,
+        "abstain_rate_pct": 5.7,
+        "coverage_pct": 94.3,
+        "accuracy_on_accepted": 0.7329,
+        "macro_f1_on_accepted": 0.7302
+      },
+      {
+        "threshold": 0.6,
+        "accepted_samples": 2378,
+        "abstain_samples": 532,
+        "abstain_rate_pct": 18.28,
+        "coverage_pct": 81.72,
+        "accuracy_on_accepted": 0.7666,
+        "macro_f1_on_accepted": 0.7483
+      },
+      {
+        "threshold": 0.7,
+        "accepted_samples": 2053,
+        "abstain_samples": 857,
+        "abstain_rate_pct": 29.45,
+        "coverage_pct": 70.55,
+        "accuracy_on_accepted": 0.7954,
+        "macro_f1_on_accepted": 0.7766
+      },
+      {
+        "threshold": 0.8,
+        "accepted_samples": 1655,
+        "abstain_samples": 1255,
+        "abstain_rate_pct": 43.13,
+        "coverage_pct": 56.87,
+        "accuracy_on_accepted": 0.8224,
+        "macro_f1_on_accepted": 0.7988
+      },
+      {
+        "threshold": 0.9,
+        "accepted_samples": 1229,
+        "abstain_samples": 1681,
+        "abstain_rate_pct": 57.77,
+        "coverage_pct": 42.23,
+        "accuracy_on_accepted": 0.8544,
+        "macro_f1_on_accepted": 0.8237
+      },
+      {
+        "threshold": 0.95,
+        "accepted_samples": 957,
+        "abstain_samples": 1953,
+        "abstain_rate_pct": 67.11,
+        "coverage_pct": 32.89,
+        "accuracy_on_accepted": 0.8642,
+        "macro_f1_on_accepted": 0.8308
+      }
+    ]
+  },
+  "Voting_Ensemble": {
+    "val_sweep": [
+      {
+        "threshold": 0.0,
+        "accepted_samples": 1455,
+        "abstain_samples": 0,
+        "abstain_rate_pct": 0.0,
+        "coverage_pct": 100.0,
+        "accuracy_on_accepted": 0.8323,
+        "macro_f1_on_accepted": 0.8376
+      },
+      {
+        "threshold": 0.5,
+        "accepted_samples": 1248,
+        "abstain_samples": 207,
+        "abstain_rate_pct": 14.23,
+        "coverage_pct": 85.77,
+        "accuracy_on_accepted": 0.8878,
+        "macro_f1_on_accepted": 0.8971
+      },
+      {
+        "threshold": 0.6,
+        "accepted_samples": 1002,
+        "abstain_samples": 453,
+        "abstain_rate_pct": 31.13,
+        "coverage_pct": 68.87,
+        "accuracy_on_accepted": 0.9321,
+        "macro_f1_on_accepted": 0.9304
+      },
+      {
+        "threshold": 0.7,
+        "accepted_samples": 737,
+        "abstain_samples": 718,
+        "abstain_rate_pct": 49.35,
+        "coverage_pct": 50.65,
+        "accuracy_on_accepted": 0.9674,
+        "macro_f1_on_accepted": 0.9578
+      },
+      {
+        "threshold": 0.8,
+        "accepted_samples": 417,
+        "abstain_samples": 1038,
+        "abstain_rate_pct": 71.34,
+        "coverage_pct": 28.66,
+        "accuracy_on_accepted": 0.9904,
+        "macro_f1_on_accepted": 0.9938
+      },
+      {
+        "threshold": 0.9,
+        "accepted_samples": 124,
+        "abstain_samples": 1331,
+        "abstain_rate_pct": 91.48,
+        "coverage_pct": 8.52,
+        "accuracy_on_accepted": 1.0,
+        "macro_f1_on_accepted": 1.0
+      },
+      {
+        "threshold": 0.95,
+        "accepted_samples": 31,
+        "abstain_samples": 1424,
+        "abstain_rate_pct": 97.87,
+        "coverage_pct": 2.13,
+        "accuracy_on_accepted": 1.0,
+        "macro_f1_on_accepted": 1.0
+      }
+    ],
+    "test_sweep": [
+      {
+        "threshold": 0.0,
+        "accepted_samples": 2910,
+        "abstain_samples": 0,
+        "abstain_rate_pct": 0.0,
+        "coverage_pct": 100.0,
+        "accuracy_on_accepted": 0.8371,
+        "macro_f1_on_accepted": 0.8385
+      },
+      {
+        "threshold": 0.5,
+        "accepted_samples": 2483,
+        "abstain_samples": 427,
+        "abstain_rate_pct": 14.67,
+        "coverage_pct": 85.33,
+        "accuracy_on_accepted": 0.8864,
+        "macro_f1_on_accepted": 0.8801
+      },
+      {
+        "threshold": 0.6,
+        "accepted_samples": 2001,
+        "abstain_samples": 909,
+        "abstain_rate_pct": 31.24,
+        "coverage_pct": 68.76,
+        "accuracy_on_accepted": 0.9285,
+        "macro_f1_on_accepted": 0.9177
+      },
+      {
+        "threshold": 0.7,
+        "accepted_samples": 1485,
+        "abstain_samples": 1425,
+        "abstain_rate_pct": 48.97,
+        "coverage_pct": 51.03,
+        "accuracy_on_accepted": 0.9515,
+        "macro_f1_on_accepted": 0.9502
+      },
+      {
+        "threshold": 0.8,
+        "accepted_samples": 911,
+        "abstain_samples": 1999,
+        "abstain_rate_pct": 68.69,
+        "coverage_pct": 31.31,
+        "accuracy_on_accepted": 0.9791,
+        "macro_f1_on_accepted": 0.9712
+      },
+      {
+        "threshold": 0.9,
+        "accepted_samples": 293,
+        "abstain_samples": 2617,
+        "abstain_rate_pct": 89.93,
+        "coverage_pct": 10.07,
+        "accuracy_on_accepted": 0.9932,
+        "macro_f1_on_accepted": 0.9883
+      },
+      {
+        "threshold": 0.95,
+        "accepted_samples": 85,
+        "abstain_samples": 2825,
+        "abstain_rate_pct": 97.08,
+        "coverage_pct": 2.92,
+        "accuracy_on_accepted": 0.9882,
+        "macro_f1_on_accepted": 0.9697
+      }
+    ]
+  },
+  "Stacking_Ensemble": {
+    "val_sweep": [
+      {
+        "threshold": 0.0,
+        "accepted_samples": 1455,
+        "abstain_samples": 0,
+        "abstain_rate_pct": 0.0,
+        "coverage_pct": 100.0,
+        "accuracy_on_accepted": 0.8323,
+        "macro_f1_on_accepted": 0.8268
+      },
+      {
+        "threshold": 0.5,
+        "accepted_samples": 1421,
+        "abstain_samples": 34,
+        "abstain_rate_pct": 2.34,
+        "coverage_pct": 97.66,
+        "accuracy_on_accepted": 0.8417,
+        "macro_f1_on_accepted": 0.8375
+      },
+      {
+        "threshold": 0.6,
+        "accepted_samples": 1362,
+        "abstain_samples": 93,
+        "abstain_rate_pct": 6.39,
+        "coverage_pct": 93.61,
+        "accuracy_on_accepted": 0.8612,
+        "macro_f1_on_accepted": 0.8577
+      },
+      {
+        "threshold": 0.7,
+        "accepted_samples": 1294,
+        "abstain_samples": 161,
+        "abstain_rate_pct": 11.07,
+        "coverage_pct": 88.93,
+        "accuracy_on_accepted": 0.8733,
+        "macro_f1_on_accepted": 0.8671
+      },
+      {
+        "threshold": 0.8,
+        "accepted_samples": 1222,
+        "abstain_samples": 233,
+        "abstain_rate_pct": 16.01,
+        "coverage_pct": 83.99,
+        "accuracy_on_accepted": 0.8912,
+        "macro_f1_on_accepted": 0.8824
+      },
+      {
+        "threshold": 0.9,
+        "accepted_samples": 1107,
+        "abstain_samples": 348,
+        "abstain_rate_pct": 23.92,
+        "coverage_pct": 76.08,
+        "accuracy_on_accepted": 0.916,
+        "macro_f1_on_accepted": 0.8967
+      },
+      {
+        "threshold": 0.95,
+        "accepted_samples": 994,
+        "abstain_samples": 461,
+        "abstain_rate_pct": 31.68,
+        "coverage_pct": 68.32,
+        "accuracy_on_accepted": 0.9245,
+        "macro_f1_on_accepted": 0.8986
+      }
+    ],
+    "test_sweep": [
+      {
+        "threshold": 0.0,
+        "accepted_samples": 2910,
+        "abstain_samples": 0,
+        "abstain_rate_pct": 0.0,
+        "coverage_pct": 100.0,
+        "accuracy_on_accepted": 0.8381,
+        "macro_f1_on_accepted": 0.8299
+      },
+      {
+        "threshold": 0.5,
+        "accepted_samples": 2849,
+        "abstain_samples": 61,
+        "abstain_rate_pct": 2.1,
+        "coverage_pct": 97.9,
+        "accuracy_on_accepted": 0.8445,
+        "macro_f1_on_accepted": 0.833
+      },
+      {
+        "threshold": 0.6,
+        "accepted_samples": 2712,
+        "abstain_samples": 198,
+        "abstain_rate_pct": 6.8,
+        "coverage_pct": 93.2,
+        "accuracy_on_accepted": 0.8654,
+        "macro_f1_on_accepted": 0.8458
+      },
+      {
+        "threshold": 0.7,
+        "accepted_samples": 2583,
+        "abstain_samples": 327,
+        "abstain_rate_pct": 11.24,
+        "coverage_pct": 88.76,
+        "accuracy_on_accepted": 0.8796,
+        "macro_f1_on_accepted": 0.8553
+      },
+      {
+        "threshold": 0.8,
+        "accepted_samples": 2440,
+        "abstain_samples": 470,
+        "abstain_rate_pct": 16.15,
+        "coverage_pct": 83.85,
+        "accuracy_on_accepted": 0.893,
+        "macro_f1_on_accepted": 0.8651
+      },
+      {
+        "threshold": 0.9,
+        "accepted_samples": 2209,
+        "abstain_samples": 701,
+        "abstain_rate_pct": 24.09,
+        "coverage_pct": 75.91,
+        "accuracy_on_accepted": 0.9081,
+        "macro_f1_on_accepted": 0.8866
+      },
+      {
+        "threshold": 0.95,
+        "accepted_samples": 1960,
+        "abstain_samples": 950,
+        "abstain_rate_pct": 32.65,
+        "coverage_pct": 67.35,
+        "accuracy_on_accepted": 0.9235,
+        "macro_f1_on_accepted": 0.9009
+      }
+    ]
+  }
+}

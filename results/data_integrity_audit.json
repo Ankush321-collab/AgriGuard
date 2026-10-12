@@ -1,0 +1,12 @@
+{
+  "total_images_processed": 14582,
+  "unique_images": 14548,
+  "duplicate_clusters": 34,
+  "removed_redundant_images": 34,
+  "duplicates_per_class": {
+    "Grey spot": 5,
+    "Brown spot": 29
+  },
+  "feature_extraction_failures": 0,
+  "timestamp": "2026-10-12T17:57:25Z"
+}

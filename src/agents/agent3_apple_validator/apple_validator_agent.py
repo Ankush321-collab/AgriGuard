@@ -66,7 +66,7 @@ def run_apple_validator_agent(state: AgriGuardState) -> AgriGuardState:
                     url, data=body_bytes, headers={"Content-Type": "application/json"}
                 )
                 try:
-                    with urllib.request.urlopen(req, timeout=15) as resp:
+                    with urllib.request.urlopen(req, timeout=25) as resp:
                         parsed = json.loads(resp.read().decode("utf-8"))
                         result_text = parsed["candidates"][0]["content"]["parts"][0]["text"]
                         spec_data = json.loads(result_text)
@@ -101,7 +101,7 @@ def run_apple_validator_agent(state: AgriGuardState) -> AgriGuardState:
         except Exception as exc:
             last_error = str(exc)
 
-    # 2. Local Fallback: If external vision service unavailable and no local binary model
+    # 2. Local Fallback: If external vision service unavailable, check local binary model
     model_path = Path("models/apple_binary_classifier.joblib")
     if model_path.is_file():
         try:
@@ -119,22 +119,19 @@ def run_apple_validator_agent(state: AgriGuardState) -> AgriGuardState:
         except Exception:
             pass
 
-    # If verification failed due to API / network failure and no model exists
-    if last_error:
-        return {
-            **state,
-            "apple_validator_passed": False,
-            "is_apple_leaf": False,
-            "apple_confidence": 0.0,
-            "apple_validator_reason": f"Species verification service unreachable ({last_error}). Cannot confirm Malus domestica.",
-            "execution_trace": trace,
-        }
+    # If verification failed or service is unconfigured, NEVER claim verification passed
+    reason_msg = (
+        f"Species verification service unreachable ({last_error}). Cannot confirm Malus domestica."
+        if last_error
+        else "Apple species verification unavailable: No multimodal vision service or local binary classifier available. Verification cannot pass without evidence."
+    )
 
     return {
         **state,
-        "apple_validator_passed": True,
-        "is_apple_leaf": True,
-        "apple_confidence": 0.90,
-        "apple_validator_reason": None,
+        "apple_validator_passed": False,
+        "is_apple_leaf": False,
+        "apple_confidence": 0.0,
+        "apple_validator_status": "UNAVAILABLE",
+        "apple_validator_reason": reason_msg,
         "execution_trace": trace,
     }

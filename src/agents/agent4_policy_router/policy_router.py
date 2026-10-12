@@ -38,7 +38,20 @@ def run_policy_router(state: AgriGuardState) -> AgriGuardState:
             "execution_trace": trace,
         }
 
-    # 3. Non-apple leaf -> REJECT
+    # 3. Species verification unavailable -> REVIEW
+    if state.get("apple_validator_status") == "UNAVAILABLE":
+        return {
+            **state,
+            "policy_decision": "REVIEW",
+            "policy_reason": state.get(
+                "apple_validator_reason",
+                "Apple species verification unavailable: Verification cannot pass without evidence.",
+            ),
+            "suggested_action": "Request expert agronomist inspection to verify tree species before taking action.",
+            "execution_trace": trace,
+        }
+
+    # 4. Confirmed Non-apple leaf -> REJECT
     if not state.get("apple_validator_passed", False):
         reason = state.get("apple_validator_reason", "Non-apple crop leaf detected.")
         return {
@@ -49,14 +62,14 @@ def run_policy_router(state: AgriGuardState) -> AgriGuardState:
             "execution_trace": trace,
         }
 
-    # 4. Borderline confidence -> REVIEW
+    # 5. Borderline species confidence -> REVIEW
     apple_conf = state.get("apple_confidence", 1.0)
     if 0.50 <= apple_conf < 0.75:
         return {
             **state,
             "policy_decision": "REVIEW",
             "policy_reason": f"Borderline apple leaf confidence ({apple_conf*100:.1f}%).",
-            "suggested_action": "Proceed with caution or upload a clearer leaf image for expert agronomy verification.",
+            "suggested_action": "Upload a clearer leaf photo or verify foliage type with an agricultural extension agent.",
             "execution_trace": trace,
         }
 
