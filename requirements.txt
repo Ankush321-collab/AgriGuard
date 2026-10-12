@@ -1,15 +1,33 @@
-opencv-python>=4.8
-torch>=2.6
-torchvision>=0.21
-Pillow>=10.0
-numpy>=1.24
-pandas>=2.0
-scikit-learn==1.9.1
-scikit-image>=0.22
+# ==============================================================================
+# AgriGuard-ML: Production Requirements & Dependencies
+# ==============================================================================
+
+# --- Computer Vision & Handcrafted Feature Extraction ---
+opencv-python>=4.8.0
+scikit-image>=0.22.0
 mahotas>=1.4.13
-lightgbm==4.7.0
-matplotlib>=3.7
-seaborn>=0.12
-h5py>=3.9
-tqdm>=4.65
-joblib>=1.3
+Pillow>=10.0.0
+numpy>=1.24.0
+h5py>=3.9.0
+
+# --- Classical Machine Learning & Disease Ensembles ---
+scikit-learn>=1.3.0
+lightgbm>=4.0.0
+joblib>=1.3.0
+pandas>=2.0.0
+
+# --- Agentic AI & LangGraph Multi-Agent Orchestration ---
+langgraph>=0.2.0
+langchain-core>=0.3.0
+python-dotenv>=1.0.0
+
+# --- Multimodal LLM & Advisory Engine ---
+google-generativeai>=0.8.0
+
+# --- Visualization & Diagnostics ---
+matplotlib>=3.7.0
+seaborn>=0.12.0
+tqdm>=4.65.0
+
+# --- Testing & Quality Assurance ---
+pytest>=7.4.0
