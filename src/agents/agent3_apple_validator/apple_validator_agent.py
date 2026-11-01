@@ -1,12 +1,17 @@
 """Agent 3: Apple Leaf Validator.
 
 Validates whether the detected leaf is an Apple leaf (Malus domestica) versus non-apple foliage.
-Uses handcrafted feature descriptors and calibrated confidence scoring.
+Uses trained calibrated ML classifier on 848 handcrafted features with multimodal vision support.
 """
 
 from __future__ import annotations
 
+import base64
+import json
+import os
 from pathlib import Path
+import urllib.error
+import urllib.request
 import joblib
 import numpy as np
 
@@ -16,14 +21,48 @@ from src.agents.state import AgriGuardState
 def run_apple_validator_agent(state: AgriGuardState) -> AgriGuardState:
     """Classify whether the leaf belongs to an apple tree with confidence thresholds."""
     trace = state.get("execution_trace", []) + ["Agent 3: Apple Species Validator"]
+    img_path = state.get("image_path")
 
-    # 1. If GEMINI_API_KEY is configured in .env, perform multimodal species verification
+    # 1. Primary: Evaluate trained calibrated ML model on 848 handcrafted features
+    model_path = Path("models/apple_binary_classifier.joblib")
+    if model_path.is_file() and img_path and Path(img_path).is_file():
+        try:
+            from step1_feature_extraction import image_features
+            feat = image_features(img_path)
+            if feat is not None:
+                model = joblib.load(model_path)
+                proba = model.predict_proba(feat.reshape(1, -1))[0]
+                apple_conf = float(proba[1])
+                is_apple = bool(apple_conf >= 0.50)
+
+                if not is_apple:
+                    return {
+                        **state,
+                        "apple_validator_passed": False,
+                        "is_apple_leaf": False,
+                        "apple_confidence": apple_conf,
+                        "apple_validator_reason": (
+                            f"Non-apple foliage detected by 848-feature species model "
+                            f"(Malus domestica probability: {apple_conf*100:.1f}%)."
+                        ),
+                        "execution_trace": trace,
+                    }
+
+                return {
+                    **state,
+                    "apple_validator_passed": True,
+                    "is_apple_leaf": True,
+                    "apple_confidence": apple_conf,
+                    "apple_validator_reason": None,
+                    "execution_trace": trace,
+                }
+        except Exception as exc:
+            pass
+
+    # 2. Secondary Multimodal Vision: If local model fails, query Gemini Vision
     from src.agents.agent8_llm_advisory.advisory_agent import _load_env_file
-    import os, json, base64, urllib.request, urllib.error
-
     _load_env_file()
     gemini_key = os.getenv("GEMINI_API_KEY")
-    img_path = state.get("image_path")
 
     CANDIDATE_MODELS = [
         "gemini-flash-lite-latest",
@@ -66,7 +105,7 @@ def run_apple_validator_agent(state: AgriGuardState) -> AgriGuardState:
                     url, data=body_bytes, headers={"Content-Type": "application/json"}
                 )
                 try:
-                    with urllib.request.urlopen(req, timeout=25) as resp:
+                    with urllib.request.urlopen(req, timeout=20) as resp:
                         parsed = json.loads(resp.read().decode("utf-8"))
                         result_text = parsed["candidates"][0]["content"]["parts"][0]["text"]
                         spec_data = json.loads(result_text)
@@ -94,37 +133,11 @@ def run_apple_validator_agent(state: AgriGuardState) -> AgriGuardState:
                             "apple_validator_reason": None,
                             "execution_trace": trace,
                         }
-                except (urllib.error.HTTPError, urllib.error.URLError, TimeoutError, KeyError, json.JSONDecodeError) as exc:
+                except Exception as exc:
                     last_error = str(exc)
                     continue
-
         except Exception as exc:
             last_error = str(exc)
-
-    # 2. Local Fallback: If external vision service unavailable, check local binary model
-    model_path = Path("models/apple_binary_classifier.joblib")
-    if model_path.is_file():
-        try:
-            model = joblib.load(model_path)
-            confidence = 0.94
-            is_apple = True
-            return {
-                **state,
-                "apple_validator_passed": True,
-                "is_apple_leaf": True,
-                "apple_confidence": confidence,
-                "apple_validator_reason": None,
-                "execution_trace": trace,
-            }
-        except Exception:
-            pass
-
-    # If verification failed or service is unconfigured, NEVER claim verification passed
-    reason_msg = (
-        f"Species verification service unreachable ({last_error}). Cannot confirm Malus domestica."
-        if last_error
-        else "Apple species verification unavailable: No multimodal vision service or local binary classifier available. Verification cannot pass without evidence."
-    )
 
     return {
         **state,
@@ -132,6 +145,8 @@ def run_apple_validator_agent(state: AgriGuardState) -> AgriGuardState:
         "is_apple_leaf": False,
         "apple_confidence": 0.0,
         "apple_validator_status": "UNAVAILABLE",
-        "apple_validator_reason": reason_msg,
+        "apple_validator_reason": (
+            f"Apple species verification failed: {last_error or 'No model available'}."
+        ),
         "execution_trace": trace,
     }

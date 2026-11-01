@@ -26,6 +26,8 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import accuracy_score, classification_report, confusion_matrix, f1_score
 from sklearn.model_selection import RandomizedSearchCV, StratifiedKFold, train_test_split
 from sklearn.neighbors import KNeighborsClassifier
+from sklearn.feature_selection import VarianceThreshold
+from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import LabelEncoder, StandardScaler
 from sklearn.svm import SVC
 
@@ -93,11 +95,21 @@ def prepare_splits(
     results_dir.mkdir(parents=True, exist_ok=True)
     manifest_df.to_csv(results_dir / "split_manifest.csv", index=False)
 
-    # Fit scaler ONLY on training data to avoid data leakage
+    # Fit feature selector (VarianceThreshold) and StandardScaler strictly on training split
+    selector = VarianceThreshold(threshold=0.0)
     scaler = StandardScaler()
-    x_train_scaled = scaler.fit_transform(features[train_indices])
-    x_val_scaled = scaler.transform(features[val_indices])
-    x_test_scaled = scaler.transform(features[test_indices])
+    preprocessor = Pipeline([
+        ("selector", selector),
+        ("scaler", scaler),
+    ])
+    x_train_scaled = preprocessor.fit_transform(features[train_indices])
+    x_val_scaled = preprocessor.transform(features[val_indices])
+    x_test_scaled = preprocessor.transform(features[test_indices])
+    n_pruned = features.shape[1] - x_train_scaled.shape[1]
+    print(
+        f"Feature selection: Pruned {n_pruned} zero-variance bins ({features.shape[1]} -> {x_train_scaled.shape[1]} features retained).",
+        flush=True,
+    )
 
     y_train = labels[train_indices]
     y_val = labels[val_indices]
@@ -111,7 +123,7 @@ def prepare_splits(
         x_val_scaled, y_val,
         x_test_scaled, y_test,
         train_indices, val_indices, test_indices,
-        scaler, label_encoder,
+        preprocessor, label_encoder,
     )
 
 
@@ -220,7 +232,7 @@ def tune_and_train_models(
             if name == "KNN":
                 model = KNeighborsClassifier(**best_params, n_jobs=-1)
             elif name == "SVM":
-                model = SVC(**best_params, kernel="rbf", probability=True, random_state=RANDOM_STATE, class_weight="balanced")
+                model = SVC(**best_params, kernel="rbf", probability=True, random_state=RANDOM_STATE, class_weight="balanced", cache_size=1000)
             elif name == "LightGBM":
                 model = lgb.LGBMClassifier(
                     **best_params,

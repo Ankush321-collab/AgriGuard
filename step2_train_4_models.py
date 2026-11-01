@@ -61,10 +61,12 @@ def main() -> None:
 
     print(f"Split counts: Train={len(train_indices)}, Validation={len(val_indices)}, Test={len(test_indices)}")
 
-    # Save standalone scaler and label encoder as requested in README
+    # Save standalone scaler, feature selector, and label encoder
     joblib.dump(scaler, args.models_dir / "scaler.joblib")
+    if hasattr(scaler, "named_steps") and "selector" in scaler.named_steps:
+        joblib.dump(scaler.named_steps["selector"], args.models_dir / "feature_selector.joblib")
     joblib.dump(label_encoder, args.models_dir / "label_encoder.joblib")
-    print("Saved StandardScaler and LabelEncoder to models/ (train-only fit).")
+    print("Saved Preprocessor (VarianceThreshold + StandardScaler) and LabelEncoder to models/ (train-only fit).")
 
     # 3. Hyperparameter tuning and base model training
     base_models, tuning_log = tune_and_train_models(

@@ -1,0 +1,10 @@
+,Alternaria leaf spot,Brown spot,Frogeye leaf spot,Grey spot,Healthy,Mosaic,Powdery mildew,Rust,Scab
+Alternaria leaf spot,60,3,1,5,0,1,0,5,8
+Brown spot,0,68,0,2,0,1,1,2,3
+Frogeye leaf spot,0,0,497,0,0,0,13,8,119
+Grey spot,11,0,0,52,0,1,1,0,2
+Healthy,0,0,3,0,56,0,1,9,34
+Mosaic,3,0,0,0,0,65,0,2,4
+Powdery mildew,0,0,21,0,0,0,184,2,29
+Rust,0,0,23,0,2,0,2,476,48
+Scab,0,0,67,0,6,0,7,22,980

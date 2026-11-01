@@ -17,15 +17,9 @@ from pathlib import Path
 # PASTE YOUR IMAGE PATH HERE TO TEST:
 # ==============================================================================
 # IMAGE_PATH = "Agentic/tseting/other_fruit_leaf/test2.png"
-IMAGE_PATH = "Agentic/tseting/blur/img2.png"
-
-
-# Quick Sample Test Paths (uncomment any to test):
-# IMAGE_PATH = "Data/Health/Health (6).jpg"                      # Valid Healthy Apple Leaf (PASS)
-# IMAGE_PATH = "Data/Scab/Scab (10).jpg"                         # Valid Apple Scab (PASS)
-# IMAGE_PATH = "Agentic/tseting/blur/blur1.png"                 # Valid Apple Rust (PASS)
-# IMAGE_PATH = "Agentic/tseting/blur/synthetic_heavy_blur.png"   # Blurry Image (RETAKE)
-# IMAGE_PATH = "Agentic/tseting/other_fruit_leaf/image.png"     # Strawberry Leaf (REJECT)
+# IMAGE_PATH = "Data/Health/Health (1).jpg"
+    
+IMAGE_PATH = "Agentic/tseting/other_fruit_leaf/pinapple_dis.png"     # Strawberry Leaf (REJECT)
 # ==============================================================================
 
 

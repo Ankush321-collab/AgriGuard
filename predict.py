@@ -56,10 +56,17 @@ def predict_disease(
     model = joblib.load(model_path)
     feat_2d = features.reshape(1, -1)
 
-    # Scale features if model is not already an end-to-end Pipeline
+    # Scale/preprocess features if model is not already an end-to-end Pipeline
     is_pipeline = isinstance(model, Pipeline)
     if not is_pipeline and scaler_path.is_file():
         scaler = joblib.load(scaler_path)
+        # Check if standalone feature selector exists and scaler expects pruned dimension
+        selector_path = model_path.parent / "feature_selector.joblib"
+        if not hasattr(scaler, "steps") and selector_path.is_file():
+            scaler_dim = getattr(scaler, "n_features_in_", None)
+            if scaler_dim is not None and scaler_dim != feat_2d.shape[1]:
+                selector = joblib.load(selector_path)
+                feat_2d = selector.transform(feat_2d)
         feat_input = scaler.transform(feat_2d)
     else:
         feat_input = feat_2d

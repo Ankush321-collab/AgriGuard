@@ -78,8 +78,10 @@ def main() -> None:
     )
     print(f"Split sizes: Train={len(train_idx)}, Validation={len(val_idx)}, Held-Out Test={len(test_idx)}")
 
-    # Save standalone scaler and label encoder
+    # Save standalone scaler, feature selector, and label encoder
     joblib.dump(scaler, args.models_dir / "scaler.joblib")
+    if hasattr(scaler, "named_steps") and "selector" in scaler.named_steps:
+        joblib.dump(scaler.named_steps["selector"], args.models_dir / "feature_selector.joblib")
     joblib.dump(label_encoder, args.models_dir / "label_encoder.joblib")
 
     # 4. Train base models (KNN, SVM, LightGBM, Random Forest)

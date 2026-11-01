@@ -111,6 +111,38 @@
         "Maintain clean tree basins and mow orchard alleys to promote predatory insect habitat."
       ],
       "chemical_regulations": "No chemical sprays required. Avoid unnecessary pesticide applications to protect beneficial predatory mites and pollinators."
+    },
+    {
+      "disease_target": "Brown spot",
+      "disease_synonyms": ["Brown leaf spot", "Marssonina coronaria", "Phyllosticta solitaria", "apple brown spot"],
+      "title": "Penn State Extension Tree Fruit Production Guide: Apple Brown Spot & Marssonina Blotch",
+      "organization": "Penn State College of Agricultural Sciences",
+      "publication_date": "2024",
+      "region": "Commercial Apple Orchards",
+      "url": "https://extension.psu.edu/apple-disease-management",
+      "retrieved_passage": "Brown spot causes discrete dark brown necrotic lesions across interveinal leaf tissue, which coalesce under warm, humid conditions. Management focuses on orchard floor sanitation, clearing weed competition beneath tree canopies, and avoiding prolonged leaf moisture periods.",
+      "cultural_controls": [
+        "Prune to open tree canopies and accelerate drying after rain events.",
+        "Remove fallen leaf litter in late autumn to reduce overwintering acervuli.",
+        "Avoid overhead irrigation that extends leaf wetness duration."
+      ],
+      "chemical_regulations": "Apply registered protective broad-spectrum fungicides prior to predicted infection periods in accordance with local extension schedules."
+    },
+    {
+      "disease_target": "Grey spot",
+      "disease_synonyms": ["Grey leaf spot", "Phyllosticta mali", "Cercospora spot", "apple grey spot"],
+      "title": "Cornell Fruit Resources: Minor Leaf Spot Complex Management in Apples",
+      "organization": "Cornell Cooperative Extension",
+      "publication_date": "2024",
+      "region": "Northeastern Apple Growing Regions",
+      "url": "https://fruit.cornell.edu/tree-fruit/ipm/",
+      "retrieved_passage": "Grey spot presents with characteristic ash-grey centers encircled by defined dark purplish-brown margins. Overwinters on fallen leaves and bud scales. Cultural management includes balanced fertilizer regimes, canopy thinning, and autumn urea sanitation.",
+      "cultural_controls": [
+        "Maintain adequate potassium and calcium levels to bolster leaf epidermal resistance.",
+        "Shred leaf litter in late autumn to accelerate fungal degradation.",
+        "Sanitize orchard floor and prune out dead twigs."
+      ],
+      "chemical_regulations": "Protectant sprays applied for apple scab typically provide secondary control against grey leaf spot. Verify current registrations with county extension."
     }
   ]
 }

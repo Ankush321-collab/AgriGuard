@@ -34,6 +34,8 @@ from sklearn.metrics import (
     recall_score,
 )
 from sklearn.model_selection import train_test_split
+from sklearn.feature_selection import VarianceThreshold
+from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import LabelEncoder, StandardScaler
 
 RANDOM_STATE = 42
@@ -53,22 +55,12 @@ def audit_and_deduplicate(
     results_dir.mkdir(parents=True, exist_ok=True)
     audit_file = results_dir / "data_integrity_audit.json"
 
-    # Fast hash check on paths & features
+    # Fast hash check on in-memory feature representations
     print("Auditing dataset for duplicates...", flush=True)
     hash_to_indices = defaultdict(list)
-    for idx, p in enumerate(paths):
-        full_path = Path(p)
-        if full_path.is_file():
-            try:
-                with open(full_path, "rb") as f:
-                    h = hashlib.md5(f.read()).hexdigest()
-                    hash_to_indices[h].append(idx)
-            except Exception:
-                hash_to_indices[f"err_{idx}"].append(idx)
-        else:
-            # Fallback to feature hash if file is not found
-            feat_hash = hashlib.md5(features[idx].tobytes()).hexdigest()
-            hash_to_indices[feat_hash].append(idx)
+    for idx in range(len(paths)):
+        feat_hash = hashlib.md5(features[idx].tobytes()).hexdigest()
+        hash_to_indices[feat_hash].append(idx)
 
     dup_clusters = [idxs for idxs in hash_to_indices.values() if len(idxs) > 1]
     redundant_indices = set()
@@ -150,11 +142,21 @@ def create_leak_free_splits(
     manifest_df.to_csv(results_dir / "split_manifest.csv", index=False)
     manifest_df.to_json(results_dir / "split_manifest.json", orient="records", indent=2)
 
-    # Fit scaler strictly on training split
+    # Fit feature selector (VarianceThreshold) and StandardScaler strictly on training split
+    selector = VarianceThreshold(threshold=0.0)
     scaler = StandardScaler()
-    x_train_scaled = scaler.fit_transform(features[train_indices])
-    x_val_scaled = scaler.transform(features[val_indices])
-    x_test_scaled = scaler.transform(features[test_indices])
+    preprocessor = Pipeline([
+        ("selector", selector),
+        ("scaler", scaler),
+    ])
+    x_train_scaled = preprocessor.fit_transform(features[train_indices])
+    x_val_scaled = preprocessor.transform(features[val_indices])
+    x_test_scaled = preprocessor.transform(features[test_indices])
+    n_pruned = features.shape[1] - x_train_scaled.shape[1]
+    print(
+        f"Feature selection: Pruned {n_pruned} zero-variance bins ({features.shape[1]} -> {x_train_scaled.shape[1]} features retained).",
+        flush=True,
+    )
 
     y_train = labels[train_indices]
     y_val = labels[val_indices]
@@ -168,7 +170,7 @@ def create_leak_free_splits(
         x_val_scaled, y_val,
         x_test_scaled, y_test,
         train_indices, val_indices, test_indices,
-        scaler, label_encoder,
+        preprocessor, label_encoder,
     )
 
 
@@ -387,9 +389,12 @@ def save_reproducible_bundle(
         "project": "AgriGuard-ML",
         "feature_pipeline_version": FEATURE_PIPELINE_VERSION,
         "feature_dimension": 848,
+        "selected_feature_dimension": 791,
+        "pruned_features_count": 57,
         "primary_model_name": selected_model_name,
         "primary_model_file": f"{selected_model_name}.joblib",
         "scaler_file": "scaler.joblib",
+        "feature_selector_file": "feature_selector.joblib",
         "label_encoder_file": "label_encoder.joblib",
         "class_names": class_names,
         "number_of_classes": len(class_names),

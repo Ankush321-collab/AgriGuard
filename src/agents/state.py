@@ -40,6 +40,8 @@ class AgriGuardState(TypedDict, total=False):
     # Agent 5: Severity Estimation
     severity_percentage: Optional[float]
     severity_tier: Optional[str]
+    severity_status: Optional[str]
+    severity_note: Optional[str]
     lesion_mask: Optional[np.ndarray]
     segmentation_reliable: bool
 
@@ -48,6 +50,7 @@ class AgriGuardState(TypedDict, total=False):
     disease_confidence: Optional[float]
     model_name: Optional[str]
     is_uncertain_prediction: bool
+    class_probabilities: Optional[Dict[str, float]]
 
     # Agent 7: Agricultural Knowledge Retrieval (RAG)
     retrieved_sources: List[Dict[str, Any]]
